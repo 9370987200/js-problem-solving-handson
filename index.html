@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   
+    div{
+        border: 2px solid black;
+        border-radius: 5px;
+        margin-bottom: auto;
+    }
+    #h11{
+        text-align: center;
+        color: hotpink;
+    }
+    pre{
+    font-size: larger; 
+    color: brown; 
+    }
+    b{
+        font-size: 20px;
+        color:rgb(126, 13, 101) ;
+    }
+    i{
+      font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+<center><h1>JS HANDSON 5 (problem solving)</h1></center>
+<div>
+    <b>1. Find the Smaller Angle</b>
+    <p>PrepBuddy has an analog clock which consists of two hands one for hour and another for minute. She wants to calculate the shorter angle formed between hour and minute hand at any given time.
+     Note: You have to complete Minimal_Angle function. No need to take any input.</p>
+    <pre>
+        var Minimal_Angle = (h, m) => 
+          {
+           let hangle=((h*360)/12+(m*360)/(12*60));
+
+           let mangle=((m*360)/60);
+
+           let angle=Math.abs(hangle-mangle);
+
+           if(angle>180){
+             angle=360-angle;
+           }
+           return angle;
+          };
+    </pre>
+    <pre>Sample Input 1
+        5 30
+        Sample Output 1
+        15
+        Sample Input 2
+        6 0
+        Sample Output 2
+        180
+    </pre>
+</div><br>
+
+<div>
+    <b>2.Check whether the year is Leap year or not.</b>
+    <p>Write a program which takes an year N as input from the user and find out whether the given year is a Leap Year or not.
+        Note: You have to complete Check_Leap function. No need to take any input.</p>
+    <pre>
+        var Check_Leap = (year) => 
+        {
+         if((0===year%4) && (0!=year%100) || (0===year%400)){
+           return "Leap Year"
+         }
+          else{
+            return "Non Leap Year"
+          }
+        
+        };
+         
+    </pre>
+    <pre>Sample Input 1
+        1900
+        Sample Output 1
+        Non Leap Year
+        Sample Input 2
+        2012
+        Sample Output 2
+        Leap Year 
+    </pre>
+</div><br>
+
+<div>
+    <b>3.Perfect Number Check.</b>
+    <p>Have you heard of Perfect numbers? If not let me tell you what is it, Perfect Numbers are integers that are equal to the sum of all its divisors except that number itself.
+     Now, You are given an integer N, write a program to check whether the given number is a Perfect Number or not.
+        Note: You have to complete Perfect _Check function. No need to take any input.</p>
+    <pre>
+        var Perfect_Check = (N) => 
+{
+  let sum=1
+  for(let i=1; i<=N/2; i++){
+    if(N%i===0){
+      sum=sum+1
+    }
+  }
+  if(N===sum){
+    return  "YES"
+  }
+  else{
+    return "NO"
+  }
+};
+ </pre>
+    <pre>Sample Input 1
+        1
+        Sample Output 1
+        YES
+        Sample Input 2
+        96345
+        Sample Output 2
+        NO
+    </pre>
+</div><br>
+
+<div>
+    <b>4.Reverse a Number.</b>
+    <p>Write a program which takes a numebr N as input from the user and You need to reverse the number.
+        Note: You have to complete Reverse_Number function. No need to take any input.</p>
+    <pre>
+        var Reverse_Number = (N) => 
+        {
+          rev=0;
+          while(N>0){
+            r=N%10;
+            rev=rev*10+r;
+            N=parseInt(N/10);
+          }
+          return rev
+          
+        };
+         
+        
+    </pre>
+    <pre>Sample Input 1
+        1900
+        Sample Output 1
+        91
+        Sample Input 2
+        2012
+        Sample Output 2
+        2102
+    </pre>
+</div><br>
+
+<div>
+    <b>5.Substring Check.</b> </b>
+    <p>You are given two strings S1 and S2, you need to check whether the string S1 is a substring of string S2 or not.
+        Note: You have to complete Substring_Check function. No need to take any input.</p>
+    <pre>
+        var Substring_Check = (S1, S2) => 
+{
+ const arr=S1.split(" ")
+ 
+ for( let i=0; i < arr.length; i++){
+   if(arr[i]===S2){
+     return "YES"
+   }
+   
+ }
+ return 'NO'
+ 
+};
+ 
+
+         
+    </pre>
+    <pre>Sample Input 1
+        Hii this is Prepbuddy
+        Prepbuddy
+        Sample Output 1
+        YES
+        
+        Sample Input 2
+        Hii this is Prepbuddy
+        Prepbytes
+        Sample Output 2
+        NO</pre>
+</div><br>
+
+    
+</body>
+</html>
+
